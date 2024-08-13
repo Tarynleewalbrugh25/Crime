@@ -4,9 +4,9 @@ config();
 
 const connection = createPool({
     host: process.env.DB_HOST,
-    database: process.env.DB_NAME,
-    user: process.env.DB_USERNAME,   // Updated name to match .env file
-    password: process.env.DB_USERPASS, // Updated name to match .env file
+    database: process.env.DB_Name,
+    user: process.env.DB_UserName,   // Updated name to match .env file
+    password: process.env.DB_UserPass, // Updated name to match .env file
     multipleStatements: true,
     connectionLimit: 30
 });
