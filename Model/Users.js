@@ -7,12 +7,17 @@ class Users{
         FROM Users;
         `
         db.query(qry, (err, results)=>{
-            if(err) throw err
-            res.json({
-                status: res.statusCode,
-                results
-            })
-            console.log("nothing");
+            if(err){
+                res.json({
+                    status: 404,
+                    msg: err.message
+                })
+            }else {
+                res.json({
+                    status: res.statusCode,
+                    results
+                })
+            }
             
         })
     }

@@ -28,7 +28,7 @@ app.use(
     cors()
 )
 app.get('^/$|/Crimewatch', (req, res) => {
-    res.status(200).sendFile(path.join(__dirname, './static/index.html'))
+    res.status(200).sendFile(path.resolve('./static/index.html'))
 })
 // app.use('/^')
 // app.use('^/$')
