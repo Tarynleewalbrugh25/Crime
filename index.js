@@ -19,7 +19,7 @@ app.use((req, res, next)=>{
     next();
 })
 app.use(
-    express.static('./static'),
+    express.static('./Static'),
     express.json(),
     express.urlencoded({
         extended: true,
@@ -28,7 +28,7 @@ app.use(
     cors()
 )
 app.get('^/$|/Crimewatch', (req, res) => {
-    res.status(200).sendFile(path.resolve('./static/index.html'))
+    res.status(200).sendFile(path.resolve('./Static/index.html'))
 })
 // app.use('/^')
 // app.use('^/$')
