@@ -35,5 +35,5 @@ app.get('^/$|/Crimewatch', (req, res) => {
 app.use('/users', userRouter)
 app.use(errorHandling)
 app.listen(port, ()=>{
-    console.log(`Server is running on port ${port}`);
+    console.log(`Server is running on port http://localhost:${port}`);
 })
