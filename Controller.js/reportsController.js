@@ -48,26 +48,6 @@ userRouter.patch('/update/:id', bodyParser.json(), (req, res)=>{
         })
     }
 })
-userRouter.post('/register', bodyParser.json(), (req, res)=>{
-    try {
-        users.createUser(req, res)
-    } catch (e) {
-        res.json({
-            status: res.statusCode,
-            msg: "Failed to add a new user"
-        })
-    }
-})
-userRouter.post('/login', bodyParser.json(), (req,res)=>{
-    try {
-        users.login(req, res)
-    } catch (e) {
-        res.json({
-            status: res.statusCode,
-            msg: "Failed to log in"
-        })
-    }
-})
 
 export{
     userRouter, express
