@@ -24,7 +24,7 @@ class Users{
     fetchUser(req, res){
         const qry = `
         SELECT Id, firstName, lastName, emailAddress, cellPhone, Pass, userRole
-        FROM Users;
+        FROM Users
         WHERE Id = ?;
         `
         db.query(qry, [req.params.id], (err, result)=>{
@@ -49,8 +49,9 @@ class Users{
             if (err){
                 res.json({
                     status: res.statusCode,
-                    msg: "This email address is already in use"
+                    msg: err
                 })
+                // console.log(res.msg);
             }else{
                 let token = createToken(user)
                 res.json({
