@@ -1,4 +1,5 @@
 import {userRouter} from './Controller.js/userController.js';
+import {reportRouter} from './Controller.js/reportsController.js';
 import cookieParser from "cookie-parser"
 import {errorHandling} from './Middleware/ErrorHandling.js';
 import path from 'path'
@@ -33,6 +34,7 @@ app.get('^/$|/Crimewatch', (req, res) => {
 // app.use('/^')
 // app.use('^/$')
 app.use('/users', userRouter)
+app.use('/reports', reportRouter)
 app.use(errorHandling)
 app.listen(port, ()=>{
     console.log(`Server is running on port http://localhost:${port}`);
